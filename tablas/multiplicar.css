@@ -1,693 +1,685 @@
-/* =========================================
+/* ================================
    CONFIGURACIÓN GENERAL
-========================================= */
+================================ */
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
     min-height: 100vh;
-    overflow-x: hidden;
-
     font-family: Arial, Helvetica, sans-serif;
-
+    background: #07070d;
     color: #ffffff;
-
-    background:
-        radial-gradient(circle at 20% 20%, #211052 0%, transparent 35%),
-        radial-gradient(circle at 80% 80%, #073b5c 0%, transparent 35%),
-        #05050b;
-
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+    overflow-x: hidden;
 }
 
 
-/* =========================================
-   FONDO TECNOLÓGICO
-========================================= */
+/* ================================
+   FONDO
+================================ */
+
+.fondo {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: -3;
+}
+
+.fondo-1 {
+    width: 350px;
+    height: 350px;
+    background: #ff00ff;
+    top: -120px;
+    left: -100px;
+}
+
+.fondo-2 {
+    width: 350px;
+    height: 350px;
+    background: #00eaff;
+    bottom: -150px;
+    right: -100px;
+}
 
 .grid {
     position: fixed;
     inset: 0;
-
     background-image:
-        linear-gradient(rgba(0, 255, 255, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 255, 0.06) 1px, transparent 1px);
-
-    background-size: 45px 45px;
-
-    mask-image: linear-gradient(
-        to bottom,
-        transparent,
-        black 25%,
-        black 75%,
-        transparent
-    );
-
-    animation: moverGrid 12s linear infinite;
-
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 35px 35px;
     pointer-events: none;
-}
-
-.fondo {
-    position: fixed;
-
-    width: 280px;
-    height: 280px;
-
-    border-radius: 50%;
-
-    filter: blur(90px);
-
-    opacity: 0.45;
-
-    animation: flotar 6s ease-in-out infinite;
-
-    pointer-events: none;
-}
-
-.fondo-1 {
-    background: #ff00ff;
-
-    top: -80px;
-    left: -80px;
-}
-
-.fondo-2 {
-    background: #00eaff;
-
-    bottom: -100px;
-    right: -80px;
-
-    animation-delay: -3s;
+    z-index: -2;
 }
 
 
-/* =========================================
+/* ================================
    CONTENEDOR
-========================================= */
+================================ */
 
 .contenedor {
     width: 100%;
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 30px 20px;
-
-    position: relative;
-    z-index: 2;
+    max-width: 650px;
 }
-
-
-/* =========================================
-   TARJETA PRINCIPAL
-========================================= */
 
 .tarjeta {
     position: relative;
-
-    width: 100%;
-    max-width: 520px;
-
-    padding: 32px;
-
+    background: rgba(12, 12, 22, 0.96);
+    border: 1px solid rgba(255, 0, 255, 0.35);
     border-radius: 24px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(25, 25, 45, 0.96),
-            rgba(7, 8, 18, 0.96)
-        );
-
-    border: 1px solid rgba(0, 238, 255, 0.35);
-
+    padding: 35px;
     box-shadow:
-        0 0 25px rgba(0, 238, 255, 0.12),
-        0 0 70px rgba(255, 0, 255, 0.08),
-        inset 0 0 30px rgba(0, 238, 255, 0.03);
-
-    backdrop-filter: blur(15px);
-
+        0 0 30px rgba(255, 0, 255, 0.12),
+        0 20px 60px rgba(0, 0, 0, 0.6);
     overflow: hidden;
-
-    animation: aparecer 0.8s ease;
-}
-/* =========================================
-   LOGO AL PIE DE PÁGINA
-========================================= */
-
-.logo-footer {
-    width: 90px;
-    height: 90px;
-
-    margin: 15px auto 0;
-
-    padding: 4px;
-
-    border-radius: 14px;
-
-    background: linear-gradient(
-        135deg,
-        #00f7ff,
-        #ff00ff
-    );
-
-    box-shadow:
-        0 0 10px rgba(0, 247, 255, 0.6),
-        0 0 20px rgba(255, 0, 255, 0.35);
-
-    animation: logoFlotante 3s ease-in-out infinite;
 }
 
-.logo-footer img {
-    width: 100%;
-    height: 100%;
 
-    display: block;
-
-    object-fit: cover;
-
-    border-radius: 10px;
-
-    background: #05050b;
-}
-
-@keyframes logoFlotante {
-
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
-}
-
-/* Línea luminosa superior */
+/* ================================
+   LÍNEA DECORATIVA
+================================ */
 
 .linea-neon {
     position: absolute;
-
     top: 0;
-    left: 10%;
-
-    width: 80%;
-    height: 2px;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #00f7ff,
-        #ff00ff,
-        #00f7ff,
-        transparent
-    );
-
-    box-shadow:
-        0 0 8px #00f7ff,
-        0 0 20px #ff00ff;
-
-    animation: linea 3s linear infinite;
-}
-
-
-/* =========================================
-   BOTÓN PROBAR
-========================================= */
-
-.btn-probar {
+    left: 0;
     width: 100%;
-
-    padding: 15px;
-
-    margin-bottom: 25px;
-
-    border: 1px solid #00f7ff;
-    border-radius: 12px;
-
+    height: 4px;
     background: linear-gradient(
         90deg,
-        rgba(0, 247, 255, 0.08),
-        rgba(255, 0, 255, 0.08)
+        #00eaff,
+        #ff00ff,
+        #00eaff
     );
-
-    color: #ffffff;
-
-    font-size: 16px;
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 0 8px rgba(0, 247, 255, 0.4),
-        inset 0 0 15px rgba(0, 247, 255, 0.05);
-
-    transition: all 0.3s ease;
-}
-
-.btn-probar span {
-    color: #00f7ff;
-
-    margin-right: 8px;
-
-    text-shadow: 0 0 10px #00f7ff;
-}
-
-.btn-probar:hover {
-    color: #05050b;
-
-    background: linear-gradient(
-        90deg,
-        #00f7ff,
-        #ff00ff
-    );
-
-    border-color: #ffffff;
-
-    box-shadow:
-        0 0 15px #00f7ff,
-        0 0 35px #ff00ff;
-
-    transform: translateY(-3px);
+    box-shadow: 0 0 15px #ff00ff;
 }
 
 
-/* =========================================
-   TEXTO
-========================================= */
+/* ================================
+   ENCABEZADO
+================================ */
+
+.encabezado {
+    text-align: center;
+}
 
 .etiqueta {
-    color: #00f7ff;
-
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 7px 14px;
+    border: 1px solid rgba(0, 234, 255, 0.35);
+    border-radius: 20px;
+    color: #00eaff;
     font-size: 11px;
     font-weight: bold;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 10px;
-
-    text-shadow: 0 0 10px #00f7ff;
+    letter-spacing: 2px;
 }
 
 h1 {
-    font-size: clamp(35px, 8vw, 52px);
-
-    line-height: 1;
-
-    letter-spacing: 3px;
-
+    font-size: clamp(30px, 6vw, 48px);
+    line-height: 1.1;
+    letter-spacing: 2px;
     margin-bottom: 15px;
-
-    color: #ffffff;
-
-    text-shadow:
-        0 0 10px rgba(255, 255, 255, 0.4),
-        0 0 25px rgba(0, 247, 255, 0.2);
 }
 
 h1 span {
+    display: block;
     color: #ff00ff;
-
-    font-size: 1.25em;
-
-    text-shadow:
-        0 0 8px #ff00ff,
-        0 0 25px #ff00ff,
-        0 0 50px rgba(255, 0, 255, 0.7);
-
-    animation: neonTexto 2s ease-in-out infinite alternate;
+    text-shadow: 0 0 18px rgba(255, 0, 255, 0.6);
 }
 
 .descripcion {
-    color: #a7b1c4;
-
+    max-width: 500px;
+    margin: auto;
+    color: #b9b9c9;
     font-size: 15px;
-
-    line-height: 1.6;
-
-    margin-bottom: 25px;
+    line-height: 1.7;
 }
 
 
-/* =========================================
-   TABLA
-========================================= */
+/* ================================
+   INSTRUCCIONES
+================================ */
+
+.instrucciones {
+    display: flex;
+    gap: 15px;
+    margin-top: 28px;
+    padding: 18px;
+    border-radius: 14px;
+    background: rgba(0, 234, 255, 0.05);
+    border-left: 3px solid #00eaff;
+}
+
+.icono-ayuda {
+    min-width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #00eaff;
+    color: #05050a;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.instrucciones strong {
+    color: #00eaff;
+    font-size: 14px;
+}
+
+.instrucciones p {
+    margin-top: 7px;
+    color: #bdbdcc;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   ENTRADA
+================================ */
+
+.entrada-datos {
+    margin-top: 28px;
+}
+
+.entrada-datos label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.numero-paso {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: rgba(255, 0, 255, 0.15);
+    border: 1px solid rgba(255, 0, 255, 0.4);
+    color: #ff00ff;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.ayuda-input {
+    margin: 10px 0;
+    color: #898999;
+    font-size: 13px;
+}
+
+.entrada-datos input {
+    width: 100%;
+    height: 55px;
+    padding: 0 18px;
+    border-radius: 12px;
+    border: 1px solid #363648;
+    outline: none;
+    background: #090912;
+    color: #ffffff;
+    font-size: 18px;
+    transition: 0.25s ease;
+}
+
+.entrada-datos input::placeholder {
+    color: #606072;
+}
+
+.entrada-datos input:focus {
+    border-color: #ff00ff;
+    box-shadow:
+        0 0 0 3px rgba(255, 0, 255, 0.08),
+        0 0 20px rgba(255, 0, 255, 0.15);
+}
+
+.texto-ejemplo {
+    display: block;
+    margin-top: 8px;
+    color: #737386;
+    font-size: 12px;
+}
+
+.texto-ejemplo strong {
+    color: #00eaff;
+}
+
+
+/* ================================
+   BOTÓN
+================================ */
+
+.btn-probar {
+    width: 100%;
+    margin-top: 18px;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(
+        90deg,
+        #ff00ff,
+        #c000ff
+    );
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.25);
+    transition: 0.25s ease;
+}
+
+.btn-probar span {
+    margin-right: 8px;
+}
+
+.btn-probar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+}
+
+.btn-probar:active {
+    transform: scale(0.98);
+}
+
+
+/* ================================
+   RESULTADO
+================================ */
+
+.resultado-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 14px;
+}
+
+.resultado-header > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.titulo-resultado {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.estado-resultado {
+    color: #00eaff;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+/* ================================
+   TABLA - DISEÑO GAMER DESTACADO
+================================ */
 
 .tabla {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 9px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 10px;
 }
+
+
+/* Cada operación */
 
 .fila {
     position: relative;
-
+    min-height: 82px;
     display: flex;
-
+    align-items: center;
     justify-content: space-between;
 
-    align-items: center;
+    padding: 15px 20px;
 
-    padding: 13px 18px;
+    border-radius: 14px;
 
-    border: 1px solid rgba(0, 247, 255, 0.12);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 0, 255, 0.10),
+            rgba(0, 234, 255, 0.06)
+        );
 
-    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
 
-    background: rgba(255, 255, 255, 0.025);
+    box-shadow:
+        inset 0 0 20px rgba(255, 0, 255, 0.03),
+        0 5px 15px rgba(0, 0, 0, 0.25);
 
     overflow: hidden;
 
     transition:
         transform 0.25s ease,
         border-color 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
+        box-shadow 0.25s ease;
 }
+
+
+/* Línea luminosa lateral */
 
 .fila::before {
     content: "";
-
     position: absolute;
-
+    left: 0;
     top: 0;
-    left: -100%;
-
-    width: 100%;
+    width: 4px;
     height: 100%;
 
     background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(0, 247, 255, 0.1),
-        transparent
+        180deg,
+        #ff00ff,
+        #00eaff
     );
 
-    transition: 0.5s;
-}
-
-.fila:hover::before {
-    left: 100%;
-}
-
-.fila:hover {
-    transform: translateX(6px);
-
-    border-color: #00f7ff;
-
-    background: rgba(0, 247, 255, 0.06);
-
     box-shadow:
-        0 0 10px rgba(0, 247, 255, 0.15),
-        inset 0 0 10px rgba(0, 247, 255, 0.04);
+        0 0 10px #ff00ff,
+        0 0 15px #00eaff;
 }
+
+
+/* Número de la operación */
 
 .fila span {
-    color: #dce6f5;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
 
-    font-size: 17px;
-}
-
-.fila strong {
-    color: #ff00ff;
-
-    font-size: 19px;
+    letter-spacing: 1px;
 
     text-shadow:
-        0 0 7px #ff00ff,
-        0 0 15px rgba(255, 0, 255, 0.5);
+        0 0 8px rgba(255, 255, 255, 0.2);
 }
 
 
-/* =========================================
+/* RESULTADO GRANDE */
+
+.fila strong {
+    min-width: 75px;
+
+    text-align: center;
+
+    padding: 8px 12px;
+
+    border-radius: 10px;
+
+    font-size: 30px;
+    font-weight: 900;
+
+    color: #00eaff;
+
+    background: rgba(0, 234, 255, 0.08);
+
+    border: 1px solid rgba(0, 234, 255, 0.25);
+
+    text-shadow:
+        0 0 8px #00eaff,
+        0 0 20px rgba(0, 234, 255, 0.7);
+
+    box-shadow:
+        inset 0 0 15px rgba(0, 234, 255, 0.08),
+        0 0 12px rgba(0, 234, 255, 0.08);
+
+    transition: 0.25s ease;
+}
+
+
+/* Efecto al pasar el mouse */
+
+.fila:hover {
+    transform: translateY(-4px) scale(1.02);
+
+    border-color: rgba(255, 0, 255, 0.65);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 0, 255, 0.16),
+            rgba(0, 234, 255, 0.10)
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(255, 0, 255, 0.15);
+}
+
+
+/* Resultado también aumenta al pasar el mouse */
+
+.fila:hover strong {
+    color: #ffffff;
+
+    background: rgba(255, 0, 255, 0.15);
+
+    border-color: #ff00ff;
+
+    text-shadow:
+        0 0 8px #ffffff,
+        0 0 20px #ff00ff,
+        0 0 35px #ff00ff;
+
+    box-shadow:
+        0 0 18px rgba(255, 0, 255, 0.35);
+}
+
+
+/* ================================
+   CELULARES
+================================ */
+
+@media (max-width: 600px) {
+
+    .tabla {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .fila {
+        min-height: 75px;
+        padding: 12px 16px;
+    }
+
+    .fila span {
+        font-size: 19px;
+    }
+
+    .fila strong {
+        min-width: 72px;
+        font-size: 28px;
+    }
+}
+
+
+/* ================================
+   MENSAJE DE AYUDA
+================================ */
+
+.mensaje-ayuda {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 18px;
+    padding: 14px;
+    border-radius: 10px;
+    background: rgba(255, 0, 255, 0.05);
+}
+
+.mensaje-ayuda span {
+    font-size: 18px;
+}
+
+.mensaje-ayuda p {
+    color: #9292a3;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.mensaje-ayuda strong {
+    color: #ff00ff;
+}
+
+.mensaje-ayuda b {
+    color: #ffffff;
+}
+
+
+/* ================================
    FOOTER
-========================================= */
+================================ */
 
 footer {
-    margin-top: 28px;
-
-    padding-top: 18px;
-
+    margin-top: 30px;
+    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+}
 
+.estado {
     display: flex;
-
-    justify-content: space-between;
-
+    justify-content: center;
     align-items: center;
+    gap: 8px;
+    color: #7f7f90;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
 
-    gap: 15px;
-
-    flex-wrap: wrap;
+.punto {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #00ff88;
+    box-shadow: 0 0 10px #00ff88;
 }
 
 footer p {
-    color: #7f8ba3;
-
+    margin-top: 12px;
+    color: #777788;
     font-size: 12px;
 }
 
 footer strong {
     color: #ffffff;
-
-    text-shadow:
-        0 0 8px #00f7ff;
 }
 
-
-/* Estado */
-
-.estado {
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    color: #00f7ff;
-
-    font-size: 10px;
-
-    letter-spacing: 1.5px;
+.logo-footer {
+    margin-top: 18px;
 }
 
-.punto {
-    width: 7px;
-    height: 7px;
-
+.logo-footer img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
     border-radius: 50%;
-
-    background: #00ff88;
-
-    box-shadow:
-        0 0 6px #00ff88,
-        0 0 15px #00ff88;
-
-    animation: parpadeo 1.2s infinite;
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 18px rgba(255, 0, 255, 0.35);
 }
 
 
-/* =========================================
-   ANIMACIONES
-========================================= */
+/* ================================
+   RESPONSIVE - TABLETS
+================================ */
 
-@keyframes aparecer {
+@media (max-width: 700px) {
 
-    from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.96);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-@keyframes flotar {
-
-    0%, 100% {
-        transform: translate(0, 0);
-    }
-
-    50% {
-        transform: translate(30px, -25px);
-    }
-}
-
-@keyframes moverGrid {
-
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(45px);
-    }
-}
-
-@keyframes neonTexto {
-
-    from {
-        text-shadow:
-            0 0 8px #ff00ff,
-            0 0 15px #ff00ff;
-    }
-
-    to {
-        text-shadow:
-            0 0 12px #ff00ff,
-            0 0 30px #ff00ff,
-            0 0 50px rgba(255, 0, 255, 0.8);
-    }
-}
-
-@keyframes linea {
-
-    0% {
-        opacity: 0.4;
-        transform: scaleX(0.7);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scaleX(1);
-    }
-
-    100% {
-        opacity: 0.4;
-        transform: scaleX(0.7);
-    }
-}
-
-@keyframes parpadeo {
-
-    0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.35;
-        transform: scale(0.7);
-    }
-}
-
-
-/* =========================================
-   TABLETS
-========================================= */
-
-@media (max-width: 768px) {
-
-    .contenedor {
-        padding: 25px 15px;
+    body {
+        padding: 20px 12px;
     }
 
     .tarjeta {
-        max-width: 480px;
-
-        padding: 28px;
+        padding: 25px 20px;
+        border-radius: 20px;
     }
 
-    h1 {
-        font-size: 42px;
+    .instrucciones {
+        padding: 15px;
+    }
+
+    .resultado-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .estado-resultado {
+        margin-left: 40px;
     }
 }
 
 
-/* =========================================
-   CELULARES
-========================================= */
+/* ================================
+   RESPONSIVE - CELULARES
+================================ */
 
 @media (max-width: 480px) {
 
     body {
-        align-items: flex-start;
-    }
-
-    .contenedor {
-        padding: 18px 12px;
+        padding: 10px;
     }
 
     .tarjeta {
-        padding: 22px 16px;
-
-        border-radius: 18px;
-    }
-
-    .btn-probar {
-        padding: 14px;
-
-        font-size: 14px;
-
-        letter-spacing: 2px;
-    }
-
-    .etiqueta {
-        font-size: 9px;
-
-        letter-spacing: 2px;
+        padding: 24px 15px;
+        border-radius: 17px;
     }
 
     h1 {
-        font-size: 34px;
-
-        letter-spacing: 1px;
+        font-size: 30px;
     }
 
     .descripcion {
         font-size: 13px;
     }
 
+    .instrucciones {
+        gap: 10px;
+    }
+
+    .instrucciones p {
+        font-size: 12px;
+    }
+
+    .entrada-datos input {
+        height: 52px;
+        font-size: 16px;
+    }
+
     .fila {
-        padding: 12px 14px;
+        padding: 12px 13px;
     }
 
     .fila span {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .fila strong {
-        font-size: 17px;
+        font-size: 16px;
     }
 
-    footer {
-        flex-direction: column;
-
-        text-align: center;
-    }
-}
-
-
-/* =========================================
-   PANTALLAS MUY PEQUEÑAS
-========================================= */
-
-@media (max-width: 350px) {
-
-    .tarjeta {
-        padding: 18px 12px;
+    .mensaje-ayuda {
+        align-items: flex-start;
     }
 
-    h1 {
-        font-size: 29px;
-    }
-
-    .fila {
-        padding: 10px 12px;
+    .logo-footer img {
+        width: 48px;
+        height: 48px;
     }
 }

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Generador de Tablas de Multiplicar | Jhonny Zaruma</title>
+
+    <link rel="stylesheet" href="multiplicar.css">
+    <script src="multiplicar.js"></script>
+</head>
+
+<body>
+
+    <!-- Fondo decorativo -->
+    <div class="fondo fondo-1"></div>
+    <div class="fondo fondo-2"></div>
+    <div class="grid"></div>
+
+    <main class="contenedor">
+
+        <section class="tarjeta">
+
+            <div class="linea-neon"></div>
+
+            <!-- Encabezado -->
+            <div class="encabezado">
+
+                <div class="etiqueta">
+                    MATEMÁTICAS // TABLAS DE MULTIPLICAR
+                </div>
+
+                <h1>
+                    GENERADOR DE
+                    <span>TABLAS</span>
+                </h1>
+
+                <p class="descripcion">
+                    Escribe cualquier número y descubre fácilmente
+                    su tabla de multiplicar del 1 al 10.
+                </p>
+
+            </div>
+
+
+            <!-- Instrucciones -->
+            <div class="instrucciones">
+
+                <div class="icono-ayuda">?</div>
+
+                <div>
+                    <strong>¿Cómo funciona?</strong>
+
+                    <p>
+                        1. Escribe un número en el campo de abajo.
+                        <br>
+                        2. Presiona <b>GENERAR TABLA</b>.
+                        <br>
+                        3. La tabla del número que elegiste aparecerá automáticamente.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Entrada de datos -->
+            <div class="entrada-datos">
+
+                <label for="respuesta">
+                    <span class="numero-paso">01</span>
+                    ESCRIBE EL NÚMERO
+                </label>
+
+                <p class="ayuda-input">
+                    Puedes ingresar cualquier número que quieras practicar.
+                </p>
+
+                <input 
+                    type="text"
+                    id="respuesta"
+                    placeholder="Ejemplo: 7"
+                    autocomplete="off"
+                    aria-label="Número para generar la tabla de multiplicar"
+                >
+
+                <small class="texto-ejemplo">
+                    Ejemplo: escribe <strong>7</strong> para obtener la tabla del 7.
+                </small>
+
+            </div>
+
+
+            <!-- Botón principal -->
+            <button 
+                class="btn-probar"
+                onclick="generarTablas()"
+                type="button"
+            >
+                <span>▶</span>
+                GENERAR TABLA
+            </button>
+
+
+            <!-- Resultado -->
+            <div class="resultado-header">
+
+                <div>
+                    <span class="numero-paso">02</span>
+                    <span class="titulo-resultado">
+                        RESULTADO
+                    </span>
+                </div>
+
+                <span class="estado-resultado">
+                    LISTO PARA GENERAR
+                </span>
+
+            </div>
+
+
+            <!-- Tabla -->
+            <div class="tabla" id="txtTabla">
+
+                <div class="fila">
+                    <span>3 × 1</span>
+                    <strong>03</strong>
+                </div>
+
+                <div class="fila">
+                    <span>3 × 2</span>
+                    <strong>06</strong>
+                </div>
+
+                <div class="fila">
+                    <span>3 × 3</span>
+                    <strong>09</strong>
+                </div>
+
+                <div class="fila">
+                    <span>3 × 4</span>
+                    <strong>12</strong>
+                </div>
+
+                <div class="fila">
+                    <span>3 × 5</span>
+                    <strong>15</strong>
+                </div>
+
+                <div class="fila">
+                    <span>3 × 6</span>
+                    <strong>18</strong>
+                </div>
+
+                <div class="fila">
+                    <span>3 × 7</span>
+                    <strong>21</strong>
+                </div>
+
+                <div class="fila">
+                    <span>3 × 8</span>
+                    <strong>24</strong>
+                </div>
+
+                <div class="fila">
+                    <span>3 × 9</span>
+                    <strong>27</strong>
+                </div>
+
+                <div class="fila">
+                    <span>3 × 10</span>
+                    <strong>30</strong>
+                </div>
+
+            </div>
+
+
+            <!-- Ayuda inferior -->
+            <div class="mensaje-ayuda">
+
+                <span>💡</span>
+
+                <p>
+                    <strong>Consejo:</strong>
+                    puedes probar con cualquier número, por ejemplo
+                    <b>2, 5, 8, 10 o 25</b>.
+                </p>
+
+            </div>
+
+
+            <!-- Pie -->
+            <footer>
+
+                <div class="estado">
+                    <span class="punto"></span>
+                    SISTEMA ACTIVO
+                </div>
+
+                <p>
+                    Creado por:
+                    <strong>Jhonny Zaruma (JS)</strong>
+                </p>
+
+                <div class="logo-footer">
+                    <img 
+                        src="logo.jpg" 
+                        alt="Logo Jhonny Zaruma"
+                    >
+                </div>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
